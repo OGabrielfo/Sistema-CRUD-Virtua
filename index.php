@@ -15,7 +15,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="index.php">Início</a>
+                    <a class="nav-link" aria-current="page" href="index.php">Início</a>
                     </li>
                     <li class="nav-item">
                     <a class="nav-link" href="?page=novo">Novo Produto</a>
@@ -34,6 +34,7 @@
         <div class="row">
             <div class="col mt-5">
             <?php
+            // Carregamento dinâmico das páginas
                 include("config.php");
                 switch(@$_REQUEST["page"]){
                     case "novo":
@@ -48,10 +49,13 @@
                     case "actions":
                         include("actions.php");
                     break;
+                    // Página inicial que é carregada sempre que nenhuma das anteriores é selecionada
                     default:
                         print "<h1 class='align-middle text-center'>Olá, seja bem vindo!</h1>";
-                        print "<div class='btn-group mt-4 d-flex justify-content-center' role='group'><button onclick=\" location.href='?page=novo' \"  class=\"btn btn-primary\">Cadastrar</button>";
-                        print "<button onclick=\" location.href='?page=listar' \"  class=\"btn btn-secondary\">Listar produtos</button></div>";
+                        print "<p class='align-middle text-center'>Aqui neste sistema você pode realizar o cadastro de seus produtos e poderá listá-los também.</p>";
+                        print "<p class='align-middle text-center mt-5'>Selecione a opção de que deseja ou acesse pelo menu acima!</p>";
+                        print "<div class='d-flex justify-content-center'><div class='btn-group mt-1' role='group'><button onclick=\" location.href='?page=novo' \"  class='btn btn-primary'>Cadastrar</button>";
+                        print "<button onclick=\" location.href='?page=listar' \"  class='btn btn-secondary'>Listar</button></div></div>";
                 }
             ?>
             </div>
