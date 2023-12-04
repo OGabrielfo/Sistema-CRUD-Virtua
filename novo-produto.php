@@ -15,7 +15,7 @@
     </div>
     <div class="mb-3">
         <label for="">Descrição</label>
-        <input type="text" name="descr" class="form-control">
+        <textarea name="descr" class="form-control" rows="3"  style="resize: none"></textarea>
     </div>
     <button type="submit" class="btn btn-primary">Salvar</button>
 </form>

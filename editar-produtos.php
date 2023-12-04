@@ -1,8 +1,13 @@
 <h1>Editar Produto</h1>
 
 <?php
+    // Comando SQL que será executado com id do produto a ser editado
     $sql = "SELECT * FROM produtos WHERE id=".$_REQUEST["id"];
+
+    // Conexão com o banco de dados com execução do comando SQL
     $res = $conn->query($sql);
+    
+    // Retorno visual com as informações do item a ser editado
     $row = $res->fetch_object();
 ?>
 
